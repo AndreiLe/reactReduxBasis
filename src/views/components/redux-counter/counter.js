@@ -9,6 +9,7 @@ export class ReduxCounter extends Component {
     super(props);
 
     this.handleIncrement = this.handleIncrement.bind(this);
+    this.handleRandrom = this.handleRandrom.bind(this);
   }
 
   render() {
@@ -19,12 +20,17 @@ export class ReduxCounter extends Component {
       <Fragment>
         <h2>{this.props.counter}</h2>
         <button onClick={this.handleIncrement}>{translate('Increment me')}</button>
+        <button onClick={this.handleRandrom}>{translate('Random')}</button>
       </Fragment>
     );
   }
 
   handleIncrement(){
     this.props.changeCounter();
+  }
+
+  handleRandrom(){
+    this.props.randomCounter();
   }
 }
 
@@ -44,7 +50,8 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-  changeCounter: counterActions.changeCounter
+  changeCounter: counterActions.changeCounter,
+  randomCounter: counterActions.randomCounter
 }
 
 export default connect(
