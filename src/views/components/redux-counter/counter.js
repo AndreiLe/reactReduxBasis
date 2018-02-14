@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {counterActions} from 'Core/counter';
 import { getTranslate } from 'react-localize-redux';
 
-class ReduxCounter extends Component {
+export class ReduxCounter extends Component {
   constructor(props) {
     super(props);
 
