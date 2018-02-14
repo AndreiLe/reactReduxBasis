@@ -15,7 +15,7 @@ var baseConfig = {
     bundle: ['./index.js','./views/styles/index.sass'] 
   },
 	output: {
-		publicPath: '/',
+		publicPath: '/'
 	},
   resolve: {
 	modules: [
