@@ -1,6 +1,6 @@
 import "babel-polyfill";
 import { delay } from 'redux-saga'
-import { fork, take, call, takeLatest, throttle, put } from 'redux-saga/effects';
+import { fork, take, call,  put } from 'redux-saga/effects';
 import { counterActions } from './actions';
 
 export function* sagasLogWithDalay(payload){
