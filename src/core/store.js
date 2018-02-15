@@ -12,11 +12,20 @@ const sagaMiddleware = createSagaMiddleware();
 
 const enhancer = applyMiddleware(thunk, routerMiddlewareWithHistory, middlewareLogger, sagaMiddleware);
 
-const store = createStore(
+let store = null;
+if (process.env.NODE_ENV !== 'production') {
+store = createStore(
   reducers, 
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   enhancer
   );
+}else {
+store = createStore(
+  reducers, 
+  enhancer
+  );
+}
+
 
 sagaMiddleware.run(sagas);
 

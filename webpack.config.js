@@ -15,6 +15,7 @@ var baseConfig = {
     bundle: ['./index.js','./views/styles/index.sass'] 
   },
 	output: {
+		filename: '[name].js',
 		publicPath: '/'
 	},
   resolve: {

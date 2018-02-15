@@ -12,8 +12,13 @@ const HtmlCriticalPlugin = require("html-critical-webpack-plugin");
 var baseConfig = {
   context: path.join(__dirname, '/src/'),
   entry: {
-    bundle: ['./index.js','./style.sass'] 
+    bundle: ['./index.js','./views/styles/index.sass'] 
   },
+	output: {
+		filename: '[name].js',
+		publicPath: '/bin',
+		path: path.join(__dirname, '/bin')
+	},
   resolve: {
 	modules: [
 		path.resolve('./src'),
@@ -128,6 +133,9 @@ var baseConfig = {
       { from: '../assets/fonts', to: 'fonts/' },
       { from: '../assets/the_favicon/', to: 'the_favicon/' }
     ]),
+new webpack.DefinePlugin({
+    'process.env.NODE_ENV': JSON.stringify('production'),
+}),
     new HtmlCriticalPlugin({
       base: path.join(__dirname, '/bin'),
       src: 'index.html',

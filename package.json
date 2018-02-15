@@ -7,10 +7,7 @@
     "test:mocha-n": "mocha --require babel-core/register --require ./test/test.setup.node.js --watch --watch-extensions js --reporter progress ./test/**/*.js",
     "test:mocha-web": "webpack-dev-server --hot --inline --config=webpack.mocha-test.config.js",
     "start": "webpack-dev-server --hot --inline",
-    "start:prod": "webpack-dev-server --hot --inline -p --config=webpack.config.prod.js",
-    "build": "webpack",
-    "build:dev": "webpack --progress --colors",
-    "build:prod": "webpack -p --config=webpack.config.prod.js"
+    "build": "webpack -p --progress --colors --config=webpack.config.prod.js"
   },
   "author": "",
   "license": "ISC",
